@@ -11,8 +11,8 @@ import x2br.mangaba.annotations.AutoImplementTheTests;
  *
  * @author Marco Antonio de Carvalho <marcarvalho@gmail.com>
  */
-@AutoImplementTheTests()
-public class Retangulo {
+   @AutoImplementTheTests(specificationMethodName = "teste",specificationMethodParamNames = {"base","altura"},specificationMethodParamTypes = {Integer.class,Integer.class})
+   public class Retangulo {
 
         int base;
         int altura;
