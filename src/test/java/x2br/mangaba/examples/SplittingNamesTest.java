@@ -1,7 +1,6 @@
 package x2br.mangaba.examples;
 
 import org.junit.runner.RunWith;
-import x2br.mangaba.Operator.OperatorEnum;
 import x2br.mangaba.annotations.Example;
 import x2br.mangaba.annotations.Param;
 import x2br.mangaba.builders.ExampleBuilder;
@@ -31,7 +30,7 @@ public class SplittingNamesTest {
         sb.eachRowAsAnExampleInTable("Each row as an example").withHeader().addColummInputName("fullName").
                 addColummResultPropertyName("firstName").addColummResultPropertyName("lastName").endHeader().
                 addRow("Jane Smith","Jane","Smith").
-                addRow("David Peterson","David","Peterson");
+                addRow("David Peterson","David","Peterson1");
 
         return sb;
     }

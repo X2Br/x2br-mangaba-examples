@@ -3,7 +3,6 @@ package x2br.mangaba.examples;
 import org.junit.Test;
 import static org.junit.Assert.*;
 import org.junit.runner.RunWith;
-import x2br.mangaba.Operator.OperatorEnum;
 import x2br.mangaba.annotations.Example;
 import x2br.mangaba.annotations.Param;
 import x2br.mangaba.builders.ExampleBuilder;
