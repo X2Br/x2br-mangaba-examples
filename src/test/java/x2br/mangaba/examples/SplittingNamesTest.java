@@ -19,18 +19,28 @@ public class SplittingNamesTest {
 
     @Example
     public static ExampleBuilder example001(ExampleBuilder sb) {
-                 sb.startP().text("The full name ").param("fullName", "Jane Smith",true).text(" is broken into first name ").
-                 resultProperty("firstName").equalTo("Jane").text(" and last name ").resultProperty("lastName").equalTo("Smith").endP().
-                         newLine().addList("item 1","item2","item3");
+        sb.startP().
+                text("The full name ").
+                param("fullName", "Jane Smith", true).
+                text(" is broken into first name ").
+                resultProperty("firstName", true).equalTo("Jane").
+                text(" and last name ").
+                resultProperty("lastName", true).equalTo("Smith").
+                endP();
         return sb;
     }
 
     @Example
     public static ExampleBuilder example002(ExampleBuilder sb) {
-        sb.eachRowAsAnExampleInTable("Each row as an example").withHeader().addColummInputName("fullName").
-                addColummResultPropertyName("firstName").addColummResultPropertyName("lastName").endHeader().
-                addRow("Jane Smith","Jane","Smith").
-                addRow("David Peterson","David","Peterson1");
+        sb.
+                eachRowAsAnExampleInTable("Each row as an example").
+                startHeader().
+                addColummInputName("fullName").
+                addColummResultPropertyName("firstName").
+                addColummResultPropertyName("lastName").
+                endHeader().
+                addRow("Jane Smith", "Jane", "Smith").
+                addRow("David Peterson", "David", "Peterson1");
 
         return sb;
     }
