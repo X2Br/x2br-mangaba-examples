@@ -15,30 +15,29 @@ import x2br.mangaba.examples.Retangulo;
  *
  * @author userName
  */
- @RunWith(MangabaRunner.class)
-public class RetanguloTest {
+@RunWith(MangabaRunner.class)
+public class AddBookTest {
 
-    public RetanguloTest() {
+    public AddBookTest() {
     }
 
-    
     @Example
     public static ExampleBuilder example001(ExampleBuilder sb) {
 
         return sb;
     }
-    
+
     @Example
     public static ExampleBuilder example002(ExampleBuilder sb) {
 
         return sb;
     }
-    
-    
-    @Specification(name = "teste", acceptanceCriteria = "**Do specification description.**")
-public RetanguloTest retanguloTest(@Param(name = "base") java.lang.Integer base, @Param(name = "altura") java.lang.Integer altura) {
-		return null;
-}
 
-    
+    @Specification(name = "Add Book",
+            userStory = "As a customer, I want to add books to my shopping cart, so that I can build a list of books I want to buy",
+            acceptanceCriteria = "**Do specification description.**")
+    public AddBookTest retanguloTest(@Param(name = "base") java.lang.Integer base, @Param(name = "altura") java.lang.Integer altura) {
+        return null;
+    }
+
 }
