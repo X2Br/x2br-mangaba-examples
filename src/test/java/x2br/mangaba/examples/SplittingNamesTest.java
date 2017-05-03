@@ -1,10 +1,13 @@
 package x2br.mangaba.examples;
 
+import org.junit.Assert;
+import org.junit.Test;
 import org.junit.runner.RunWith;
 import x2br.mangaba.annotations.Example;
 import x2br.mangaba.annotations.Param;
 import x2br.mangaba.builders.ExampleBuilder;
 import x2br.mangaba.annotations.Specification;
+import x2br.mangaba.annotations.SpecificationDocument;
 import x2br.mangaba.runners.MangabaRunner;
 
 /**
@@ -16,6 +19,12 @@ public class SplittingNamesTest {
 
     public SplittingNamesTest() {
     }
+    
+    @SpecificationDocument
+    private static String specDoc;
+    
+    
+    
 
     @Example
     public static ExampleBuilder example001(ExampleBuilder sb) {
@@ -53,6 +62,12 @@ public class SplittingNamesTest {
             + "The system therefore attempts to break a supplied full name into its constituents by splitting around whitespace.")
     public SplittingNames split(@Param(name = "fullName") String fullName) {
         return new SplittingNames(fullName);
+    }
+    
+    @Test
+    public void testeSpecDocAnnotation() {
+        System.out.println("*****>  Is annotation SpecificationDocument present:"+SplittingNamesTest.class.isAnnotationPresent(SpecificationDocument.class));
+        Assert.assertTrue(true);
     }
 
 }
