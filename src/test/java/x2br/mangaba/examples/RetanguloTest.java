@@ -16,7 +16,7 @@ import x2br.mangaba.examples.Retangulo;
  *
  * @author userName
  */
-@RunWith(MangabaRunner.class)
+ @RunWith(MangabaRunner.class)
 public class RetanguloTest {
 
     public RetanguloTest() {
@@ -28,22 +28,25 @@ public class RetanguloTest {
             text("Add more text in the paragraph ...").bold(" Add bold text ...").italic("Add italic text ...").endP().
             startP("Other paragraph... ").endP().
             asString();
-
+    
+    
     @Example
     public static ExampleBuilder example001(ExampleBuilder sb) {
 
         return sb;
     }
-
+    
     @Example
     public static ExampleBuilder example002(ExampleBuilder sb) {
 
         return sb;
     }
-
+    
+    
     @Specification(name = "teste")
-    public Retangulo retanguloTest(@Param(name = "base") java.lang.Integer base, @Param(name = "altura") java.lang.Integer altura) {
-        return null;
-    }
+public Retangulo retanguloTest(@Param(name = "base") java.lang.Integer base, @Param(name = "altura") java.lang.Integer altura) {
+		return null;
+}
 
+    
 }

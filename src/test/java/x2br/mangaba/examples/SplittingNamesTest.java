@@ -19,6 +19,7 @@ import x2br.mangaba.runners.MangabaRunner;
 public class SplittingNamesTest {
 
     public SplittingNamesTest() {
+        
     }
 
     @SpecificationDocument
