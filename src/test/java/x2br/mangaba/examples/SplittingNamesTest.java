@@ -8,6 +8,7 @@ import x2br.mangaba.annotations.Param;
 import x2br.mangaba.builders.ExampleBuilder;
 import x2br.mangaba.annotations.Specification;
 import x2br.mangaba.annotations.SpecificationDocument;
+import x2br.mangaba.builders.dsl.html.DocBuilder;
 import x2br.mangaba.runners.MangabaRunner;
 
 /**
@@ -19,12 +20,13 @@ public class SplittingNamesTest {
 
     public SplittingNamesTest() {
     }
-    
+
     @SpecificationDocument
-    private static String specDoc;
-    
-    
-    
+    private static final String specDoc = DocBuilder.start(). //
+            startP("To help personalise our mailshots we want to have the first name and last name of the customer. ").
+            text("Unfortunately the customer data that we are supplied only contains full names.").endP().
+            startP("The system therefore attempts to break a supplied full name into its constituents by splitting around whitespace.").endP().
+            asString();
 
     @Example
     public static ExampleBuilder example001(ExampleBuilder sb) {
@@ -54,19 +56,13 @@ public class SplittingNamesTest {
         return sb;
     }
 
-    @Specification(name = "Splitting Names",
-            userStory = "",
-            acceptanceCriteria = "To help personalise our mailshots we want to have the first name and last name of the customer. "
-            + "Unfortunately the customer data that we are supplied only contains full names."
-            + "<p></p>"
-            + "The system therefore attempts to break a supplied full name into its constituents by splitting around whitespace.")
+    @Specification(name = "Splitting Names")
     public SplittingNames split(@Param(name = "fullName") String fullName) {
         return new SplittingNames(fullName);
     }
-    
+
     @Test
     public void testeSpecDocAnnotation() {
-        System.out.println("*****>  Is annotation SpecificationDocument present:"+SplittingNamesTest.class.isAnnotationPresent(SpecificationDocument.class));
         Assert.assertTrue(true);
     }
 
