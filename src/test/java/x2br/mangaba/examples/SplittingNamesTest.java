@@ -19,7 +19,7 @@ import x2br.mangaba.runners.MangabaRunner;
 public class SplittingNamesTest {
 
     public SplittingNamesTest() {
-        
+
     }
 
     @SpecificationDocument
@@ -35,7 +35,7 @@ public class SplittingNamesTest {
                 text("The full name ").
                 param("fullName", "Jane Smith", true).
                 text(" is broken into first name ").
-               resultProperty("firstName", true).equalTo("Jane").
+                resultProperty("firstName", true).equalTo("Jane").
                 text(" and last name ").
                 resultProperty("lastName", true).equalTo("Smith").
                 endP();
@@ -62,9 +62,14 @@ public class SplittingNamesTest {
     }
 
     @Test
-    public void testeSpecDocAnnotation() {
+    public void testeSpecDocAnnotation001() {
         Assert.assertTrue(true);
         Assert.assertEquals("Pedro", "Paulo");
+    }
+
+    @Test
+    public void testeSpecDocAnnotation002() {
+        Assert.assertTrue(true);
     }
 
 }

@@ -3,6 +3,7 @@ package x2br.mangaba.examples;
 import org.junit.Test;
 import static org.junit.Assert.*;
 import org.junit.runner.RunWith;
+import java.util.logging.Logger;
 import x2br.mangaba.annotations.Example;
 import x2br.mangaba.annotations.Param;
 import x2br.mangaba.builders.ExampleBuilder;
@@ -18,6 +19,8 @@ import x2br.mangaba.examples.Retangulo;
  */
  @RunWith(MangabaRunner.class)
 public class RetanguloTest {
+
+    private static final Logger LOGGER = Logger.getLogger(Logger.GLOBAL_LOGGER_NAME);
 
     public RetanguloTest() {
     }
