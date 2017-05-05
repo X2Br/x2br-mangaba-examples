@@ -35,7 +35,7 @@ public class SplittingNamesTest {
                 text("The full name ").
                 param("fullName", "Jane Smith", true).
                 text(" is broken into first name ").
-                resultProperty("firstName", true).equalTo("Jane").
+               resultProperty("firstName", true).equalTo("Jane").
                 text(" and last name ").
                 resultProperty("lastName", true).equalTo("Smith").
                 endP();
@@ -44,8 +44,7 @@ public class SplittingNamesTest {
 
     @Example
     public static ExampleBuilder example002(ExampleBuilder sb) {
-        sb.
-                eachRowAsAnExampleInTable("Each row as an example").
+        sb.withExamplesInTable("Each row as an example").
                 startHeader().
                 addColummInputName("fullName").
                 addColummResultPropertyName("firstName").
@@ -65,6 +64,7 @@ public class SplittingNamesTest {
     @Test
     public void testeSpecDocAnnotation() {
         Assert.assertTrue(true);
+        Assert.assertEquals("Pedro", "Paulo");
     }
 
 }
