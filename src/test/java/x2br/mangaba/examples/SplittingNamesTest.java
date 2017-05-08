@@ -1,6 +1,8 @@
 package x2br.mangaba.examples;
 
 import org.junit.Assert;
+import org.junit.Before;
+import org.junit.BeforeClass;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import x2br.mangaba.annotations.Example;
@@ -22,11 +24,12 @@ public class SplittingNamesTest {
 
     }
 
+
     @SpecificationDocument
     private static final String specDoc = DocBuilder.start(). //
             startP("To help personalise our mailshots we want to have the first name and last name of the customer. ").
             text("Unfortunately the customer data that we are supplied only contains full names.").endP().
-            startP("The system therefore attempts to break a supplied full name into its constituents by splitting around whitespace.").endP().
+            p("The system therefore attempts to break a supplied full name into its constituents by splitting around whitespace.").
             asString();
 
     @Example
@@ -51,7 +54,7 @@ public class SplittingNamesTest {
                 addColummResultPropertyName("lastName").
                 endHeader().
                 addRow("Jane Smith", "Jane", "Smith").
-                addRow("David Peterson", "David", "Peterson1");
+                addRow("David Peterson", "David", "Peterson");
 
         return sb;
     }
